@@ -1,0 +1,32 @@
+:root {
+    --primary: rgb(1, 143, 225);
+    --primary-dark: rgb(2, 105, 164);
+  }
+
+.buy{
+    color:white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: var(--primary);
+    border: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+  }
+  .buy:active{
+    background: var(--primary-dark);
+  }
+ 
+.buy span::before{
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+    margin: 0px 8px 0 0;
+    width: 18px;
+    height: 18px;
+    background: url('../../../public/buy-icon.svg');
+    background-size: contain;
+    fill: white;
+}

@@ -1,0 +1,9 @@
+.pending{
+    font-family: 'Roboto Mono', monospace;
+    font-size:26px;
+}
+
+.active{
+    text-decoration: underline;
+}
+

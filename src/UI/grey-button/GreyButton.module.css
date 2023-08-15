@@ -1,0 +1,9 @@
+.btn{
+    padding:12px 16px;
+    border: 0px;
+    border-radius: 3px;
+    background: rgb(200, 200, 200);
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+}
+

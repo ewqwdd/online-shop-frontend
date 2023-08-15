@@ -1,0 +1,12 @@
+.btn{
+    padding:16px 26px;
+    font-size: 26px;
+    font-family: 'Roboto';
+    border-radius:6px;
+    background: var(--primary);
+    color:white;
+    border:0px;
+    cursor: pointer;
+    text-align: center;
+}
+
