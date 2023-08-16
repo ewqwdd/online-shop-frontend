@@ -844,6 +844,9 @@ textarea{
   .item-page-img-container{
     width:70%;
   }
+  .add-item-form{
+    width:80%;
+  }
   .items-list{
     grid-template-columns: 1fr 1fr;
   }
@@ -899,6 +902,9 @@ textarea{
 }
 
 @media (max-width: 520px){
+  .item-page-img-container {
+    height: 300px;
+}
   .items-list.items-list-1fr .card-extra-show{
     position: static;
     width: 100%;
