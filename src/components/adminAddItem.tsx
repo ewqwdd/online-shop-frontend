@@ -20,7 +20,7 @@ const AdminAddItem = ()=>{
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
     let message = useMessage()
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
 
     let [addItem, result] = itemsApi.useAddItemMutation()
 

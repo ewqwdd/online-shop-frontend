@@ -19,9 +19,9 @@ interface Params extends IParamsItems{
 
 const ItemForm: FC<Params> = ({data, files, setSelectedFiles})=>{
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
-    let item = useAppSelector(state=>state.itemEditReducer) as itemEditStore
-    let role = useAppSelector(state=>state.userReducer.role) as string
+    let token = useAppSelector(state=>state.userReducer.token)
+    let item = useAppSelector(state=>state.itemEditReducer) 
+    let role = useAppSelector(state=>state.userReducer.role) 
     let edit = item.edit
     let price = item.price
 
@@ -52,7 +52,7 @@ const ItemForm: FC<Params> = ({data, files, setSelectedFiles})=>{
     let handleSave = ()=>{
         let {price, description, characteristics, title, img} = item
         setSelectedFiles([])
-        //@ts-ignore
+
         updateItem({_id: data._id, price, description, characteristics, title, token, files, img})
         dispatch(itemEditActions.hide())
     }

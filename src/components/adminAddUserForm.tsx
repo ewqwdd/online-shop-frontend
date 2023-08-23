@@ -15,7 +15,7 @@ let AdminAddUserForm = ()=>{
     let [email, setEmail] = useState<string>("")
     let [role, setRole] = useState<string>("user")
 
-    let token = useAppSelector(state=> state.userReducer.token) as string
+    let token = useAppSelector(state=> state.userReducer.token)
 
     let [postUsers, result] = usersApi.usePostUsersMutation()
     let message = useMessage()

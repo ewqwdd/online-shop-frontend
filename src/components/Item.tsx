@@ -16,20 +16,9 @@ const Item: React.FC<itemProps> = ({item})=>{
 
     let [isHover, setIsHover] = useState<boolean>(false)
 
-    // useEffect(()=>{
-    //     let temp = 0
-    //     if(item){
-    //         item.rating.forEach((elem)=>{
-    //             temp+=elem.value
-    //         })
-    //         temp = temp/item.rating.length
-    //         setAvgRate(temp)
-    //     }
-    // }, [item])
-
     let sliced = item.characteristics.slice(0, 5)
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
 
     let [updateBasket, result] = basketApi.useAddToBasketMutation()
 
@@ -40,9 +29,8 @@ const Item: React.FC<itemProps> = ({item})=>{
     let dispatch = useAppDispatch()
 
     let handleClick = async()=>{
-        let res = await updateBasket({token, item:item._id})
-        // @ts-ignore
-        if(res.error){ 
+        await updateBasket({token, item:item._id})
+        if(result.error){ 
             dispatch(actions.logout())
             return message("Error, please login tou your account", false)
         }

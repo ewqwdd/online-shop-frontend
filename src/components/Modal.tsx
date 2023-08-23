@@ -5,8 +5,8 @@ import { modalSlice } from "../store/modalReducer"
 
 const Modal: FC = ()=>{
 
-    let show = useAppSelector(state=>state.modalReducer.show) as boolean
-    let children = useAppSelector(state=>state.modalReducer.children) as ReactNode
+    let show = useAppSelector(state=>state.modalReducer.show)
+    let children = useAppSelector(state=>state.modalReducer.children)
 
     let dispatch = useAppDispatch()
     let actions = modalSlice.actions

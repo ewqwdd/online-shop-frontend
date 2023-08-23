@@ -11,7 +11,7 @@ import AdminUserEdit from "./adminUserEdit";
 
 let AdminUser: FC<{user: IUser}> = ({user})=>{
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
 
     let [edit, setEdit] = useState<boolean>(false)
 

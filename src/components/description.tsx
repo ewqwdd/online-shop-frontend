@@ -6,7 +6,7 @@ import { itemEditSlice } from '../store/itemEditReducer'
 const Description: FC<IParamsItems> = ({data})=>{
 
     let edit = useAppSelector(state=>state.itemEditReducer.edit)
-    let description = useAppSelector(state=>state.itemEditReducer.description) as string
+    let description = useAppSelector(state=>state.itemEditReducer.description)
     let dispatch = useAppDispatch()
 
     let itemEditActions = itemEditSlice.actions

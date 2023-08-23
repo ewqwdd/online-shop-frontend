@@ -5,8 +5,8 @@ import NavLogout from "./nav-logout";
 import { logoutSlice } from "../store/logoutReducer";
 const NavUser: FC<{show: boolean}> = ({show})=>{
 
-    let user = useAppSelector(state=>state.userReducer.user) as string
-    let role = useAppSelector(state=>state.userReducer.role) as string
+    let user = useAppSelector(state=>state.userReducer.user) 
+    let role = useAppSelector(state=>state.userReducer.role) 
     let isClicked = useAppSelector(state=>state.logoutReducer.show)
     let dispatch = useAppDispatch()
     let actions = logoutSlice.actions

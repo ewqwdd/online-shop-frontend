@@ -9,7 +9,7 @@ import ErrorPage from "../pages/404"
 
 const Reviews: FC<{items: IItems}> = ({items})=>{
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
 
 
     let {data, isLoading, isError} = usersApi.useGetUsersQuery({token})

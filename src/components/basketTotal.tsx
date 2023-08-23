@@ -7,8 +7,8 @@ import { basketApi } from "../api/basketApi";
 
 const BasketTotal: FC = ()=>{
     let sum = 0;
-    let token = useAppSelector(state=>state.userReducer.token) as string
-    let items = useAppSelector((state)=>state.basketPriceReducer) as BasketPrice
+    let token = useAppSelector(state=>state.userReducer.token)
+    let items = useAppSelector((state)=>state.basketPriceReducer)
     for(let i in items){
         sum+=items[i]
     }

@@ -3,7 +3,6 @@ import register from "../api/registerApi"
 import {userSlice} from '../store/userReducer'
 import { useAppDispatch, useAppSelector } from '../store/storeHooks'
 import Input from '../UI/input/Input'
-import GreyButton from '../UI/grey-button/GreyButton'
 import PrimaryButton from '../UI/primary-button/primaryButton'
 import { modalSlice } from '../store/modalReducer'
 import useMessage from '../hooks/useMessage'

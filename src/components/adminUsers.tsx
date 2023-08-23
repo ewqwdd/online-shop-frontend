@@ -5,7 +5,7 @@ import AdminUser from './adminUser'
 
 const AdminUsers = ()=>{
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token) 
     
     let {data, isError, isLoading} = usersApi.useGetUsersQuery({token})
 

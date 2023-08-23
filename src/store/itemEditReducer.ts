@@ -2,7 +2,6 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICharacteristics, IItems, IReview } from "../types";
 
 export interface itemEditStore{
-    edit: boolean;
     _id?: string;
     title?: string;
     description?: string;
@@ -14,8 +13,11 @@ export interface itemEditStore{
     files?: File[];
 }
 
+interface InitialState extends itemEditStore{
+    edit: boolean;
+}
 
-let initialState: itemEditStore = {
+let initialState: InitialState = {
     edit: false,
 }
 

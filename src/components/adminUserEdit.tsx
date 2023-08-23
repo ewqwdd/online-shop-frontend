@@ -13,7 +13,7 @@ let AdminUserEdit: FC<{user: IUser, close: ()=>void}> = ({user, close})=>{
     let [username, setUsername] = useState<string>(user.username)
     let [email, setEmail] = useState<string>(user.email)
     let [role, setRole] = useState<string>(user.role)
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
     let message = useMessage()
 
     let [updateUsers, result] = usersApi.usePutUserMutation()

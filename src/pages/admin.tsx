@@ -11,8 +11,8 @@ import AdminAddUser from '../components/adminAddUser'
 
 const Admin = ()=>{
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
-    let role = useAppSelector(state=>state.userReducer.role) as string
+    let token = useAppSelector(state=>state.userReducer.token) 
+    let role = useAppSelector(state=>state.userReducer.role) 
 
     let message = useMessage()
     let navigate = useNavigate()

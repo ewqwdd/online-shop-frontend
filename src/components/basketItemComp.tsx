@@ -12,7 +12,7 @@ interface Params{
 
 const BasketItemComp: FC<Params> = ({data, number})=>{
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
 
     let dispatch = useAppDispatch()
 

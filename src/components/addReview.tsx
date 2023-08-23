@@ -17,7 +17,7 @@ const AddReview: FC<{item: IItems}> = ({item})=>{
 
     const marks = [2, 4, 6, 8, 10]
 
-    let token = useAppSelector(state=>state.userReducer.token) as string
+    let token = useAppSelector(state=>state.userReducer.token)
 
     let {data, isLoading, isError} = usersApi.useIfBoughtItemQuery({token, id: item._id}) 
     let [addReview, result] = itemsApi.useAddReviewMutation()

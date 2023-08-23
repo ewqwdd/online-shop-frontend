@@ -5,7 +5,7 @@ const Message: FC = ()=>{
 
     let isActive = useAppSelector(state=> state.messageReducer.show)
     let isPositive = useAppSelector(state=> state.messageReducer.positive)
-    let children = useAppSelector(state=> state.messageReducer.children) as string
+    let children = useAppSelector(state=> state.messageReducer.children)
 
 
     return(

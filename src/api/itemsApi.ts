@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import {baseUrl} from '../config.js'
 import { ICharacteristics, IItems } from '../types.js';
 import _ from 'lodash'
+import { itemEditStore } from '../store/itemEditReducer.js';
 
 interface AddItemParams{
     title: string;
@@ -18,7 +19,7 @@ interface DeleteItemParams{
     token: string;
 }
 
-interface UpdateItemsParams extends IItems{
+interface UpdateItemsParams extends itemEditStore{
     token: string;
     files: File[]
 }
@@ -76,8 +77,8 @@ export let itemsApi = createApi({
         updateItems: build.mutation<any, UpdateItemsParams>({query: ({_id, price, title, description, characteristics, img, token, files})=>{
 
             let formData = new FormData()
-            formData.append('title', title)
-            formData.append('description', description)
+            formData.append('title', title ? title : "")
+            formData.append('description', description ? description : "")
             formData.append('price', String(price))
             formData.append('characteristics', JSON.stringify(characteristics))
             formData.append('img', JSON.stringify(img))

@@ -20,8 +20,8 @@ const ItemLeft: FC<Params> = ({data, setSelectedFiles, selectedFiles})=>{
     let [slideLeft, setSlideLeft] = useState<boolean>(false)
 
     let edit = useAppSelector(state=>state.itemEditReducer.edit)
-    let title = useAppSelector(state=>state.itemEditReducer.title) as string
-    let pictures = useAppSelector(state=>state.itemEditReducer.img) as string[]
+    let title = useAppSelector(state=>state.itemEditReducer.title) 
+    let pictures = useAppSelector(state=>state.itemEditReducer.img) 
     let dispatch = useAppDispatch()
 
     let itemEditActions = itemEditSlice.actions
@@ -67,12 +67,14 @@ const ItemLeft: FC<Params> = ({data, setSelectedFiles, selectedFiles})=>{
     }
 
     let handleAddPicture = (url: string)=>{
-        dispatch(itemEditActions.setImg({img: [url, ...pictures]}))
+        let check = pictures ? pictures : []
+        dispatch(itemEditActions.setImg({img: [url, ...check]}))
     }
 
     let handleDeletePicture = (url: string)=>{
-        let indexToDelete = pictures.findIndex(elem=>elem===url)
-        let temp = [...pictures]
+        let check = pictures ? pictures : []
+        let indexToDelete = check.findIndex(elem=>elem===url)
+        let temp = [...check]
         temp.splice(indexToDelete, 1)
         dispatch(itemEditActions.setImg({img: temp}))
     }
@@ -91,7 +93,7 @@ const ItemLeft: FC<Params> = ({data, setSelectedFiles, selectedFiles})=>{
         {edit ? 
             <Fragment>
                 <h2>Add picture</h2>
-                <AddPicture pictures={pictures} handleAdd={handleAddPicture} handleDelete={handleDeletePicture} />
+                <AddPicture pictures={pictures ? pictures : []} handleAdd={handleAddPicture} handleDelete={handleDeletePicture} />
                 <AddPictureFile selectedFiles={selectedFiles} setSelectedFiles={setSelectedFiles} />
             </Fragment>:
             <div className='item-page-img-container'>

@@ -5,12 +5,9 @@ import Items from "../pages/items"
 import ItemFullPage from "../pages/ItemFullPage"
 import Basket from "../pages/basket"
 import Nav from "./nav"
-import { FC, MouseEventHandler } from "react"
+import { FC } from "react"
 import Modal from "./Modal"
-import { useAppDispatch, useAppSelector } from "../store/storeHooks"
-import { logoutSlice } from "../store/logoutReducer"
 import Message from "./Message"
-import { basketApi } from "../api/basketApi"
 import Admin from "../pages/admin"
 
 const AppRouter: FC = ()=>{
@@ -31,7 +28,6 @@ const AppRouter: FC = ()=>{
                 <Route path="/admin" Component={Admin}/>
             </Routes>
         </div>
-        {/* <div>Icons made from <a href="https://www.onlinewebfonts.com/icon">svg icons</a>is licensed by CC BY 4.0</div> */}
         </BrowserRouter>
     
     )
