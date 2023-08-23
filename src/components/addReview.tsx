@@ -42,8 +42,6 @@ const AddReview: FC<{item: IItems}> = ({item})=>{
         }  
     }
 
-    console.log(data)
-
     
     return(
         <Fragment>

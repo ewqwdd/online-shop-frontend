@@ -13,14 +13,13 @@ const Characteristics: FC<IParamsItems> = ({data})=>{
     let chars = useAppSelector(state=>state.itemEditReducer.characteristics) as ICharacteristics[]
     let itemEditActions = itemEditSlice.actions
     let dispatch = useAppDispatch()
-    let [title, setTitle] = useState<string>("")
-    let [value, setValue] = useState<string>("")
 
-    let handleSubmit: FormEventHandler<HTMLFormElement> = (e)=>{
-        e.preventDefault()
-        dispatch(itemEditActions.setChars({characteristics: [{name: title, value}, ...chars]}))
-    }
+    // let handleSubmit: FormEventHandler<HTMLFormElement> = (e)=>{
+    //     e.preventDefault()
+    //     dispatch(itemEditActions.setChars({characteristics: [{name: title, value}, ...chars]}))
+    // }
 
+    console.log(chars)
     let handleAdd = (name: string, value: string)=>{
         dispatch(itemEditActions.setChars({characteristics: [{name, value}, ...chars]}))
     }
